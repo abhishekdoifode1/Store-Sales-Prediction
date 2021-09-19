@@ -1,0 +1,177 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Store Sales Prediction</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="/static/s.png" rel="icon">
+
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="/static/assets/css/style.css" rel="stylesheet">
+  
+
+  </head>
+  
+  <body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+  
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+  
+        <div class="logo">
+          <h1 class="text-light"><a href="/"><span>Store Sales Prediction</span></a></h1>
+        </div>
+  
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto " href="/">Home</a></li>
+
+
+
+
+
+
+            <li><a class="getstarted scrollto" >P R E D I C T</a></li>
+          </ul>
+          <i class="bi mobile-nav-toggle bi-list"></i>
+        </nav><!-- .navbar -->
+  
+      </div>
+    </header><!-- End Header -->
+  
+    <main id="main">
+  
+      <!-- ======= Breadcrumbs Section ======= -->
+      <section class="breadcrumbs">
+        <div class="container">
+  
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>PREDICTION</h2>
+            
+          </div>
+  
+        </div>
+      </section><!-- End Breadcrumbs Section -->
+  
+      <section class="inner-page">
+        <div class="container">
+          <div>
+  
+         <form action="{% url 'result' %}" method="post">
+  
+             {% csrf_token %}
+  
+  
+  
+              Item Weight : <input type="number" step="0.00000001" required="" name="item_weight"> <br> <br>
+              Item Visibility : <input type="number" step="0.00000001" required="" name="item_visibility"> <br> <br>
+              Item MRP : <input type="number" step="0.00000001" required="" name="item_mrp"> <br> <br>
+              Outlet Establishment Year : <input type="number" required="" name="outlet_establishment_year"> <br> <br>
+  
+             Item Fat Content :
+             <label for="item_fat_content"></label>
+             <select  name="item_fat_content" id="item_fat_content">
+                 <option value="Low Fat">Low Fat</option>
+                 <option value="Regular">Regular</option>
+             </select><br> <br>
+  
+              Item Type:
+             <label for="item_type"></label>
+             <select name="item_type" id="item_type">
+                 <option value="Fruits and Vegetables">Fruits and Vegetables</option>
+                 <option value="Snack Foods">Snack Foods</option>
+                 <option value="Household">Household</option>
+                 <option value="Frozen Foods">Frozen Foods</option>
+                 <option value="Dairy">Dairy</option>
+                 <option value="Canned">Canned</option>
+                 <option value="Baking Goods">Baking Goods</option>
+                 <option value="Health and Hygiene">Health and Hygiene</option>
+                 <option value="Soft Drinks">Soft Drinks</option>
+                 <option value="Meat">Meat</option>
+                 <option value="Breads">Breads</option>
+                 <option value="Hard Drinks">Hard Drinks</option>
+                 <option value="Starchy Foods">Starchy Foods</option>
+                 <option value="Breakfast">Breakfast</option>
+                 <option value="Seafood">Seafood</option>
+                 <option value="Others">Others</option>
+             </select><br> <br>
+              Outlet Size:
+             <label for="outlet_size"></label>
+             <select name="outlet_size" id="outlet_size">
+                 <option value="Small">Small</option>
+                 <option value="Medium">Medium</option>
+                 <option value="High">High</option>
+             </select><br> <br>
+              Outlet Location Type :
+             <label for="outlet_location_type"></label>
+             <select name="outlet_location_type" id="outlet_location_type">
+                 <option value="Tier 1">Tier 1</option>
+                 <option value="Tier 2">Tier 2</option>
+                 <option value="Tier 3">Tier 3</option>
+             </select><br> <br>
+              Outlet Type :
+             <label for="outlet_type"></label>
+             <select name="outlet_type" id="outlet_type">
+                 <option value="Grocery Store">Grocery Store</option>
+                 <option value="Supermarket Type1">Supermarket Type1</option>
+                 <option value="Supermarket Type2">Supermarket Type2</option>
+                 <option value="Supermarket Type3">Supermarket Type3</option>
+             </select><br> <br>
+  
+  
+         <input type="submit" value="Predict"><br> <br>
+         </form>
+  
+  
+     </div>
+  
+        </div>
+      </section>
+  
+    </main><!-- End #main -->
+  
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+  
+      
+  
+      
+  
+      <div class="container py-4">
+        <div class="copyright">
+          © Copyright <strong><span>VARUN &amp; ABHISHEK</span></strong>. All Rights Reserved
+        </div>
+        
+      </div>
+    </footer><!-- End Footer -->
+      
+      <!-- Vendor JS Files -->
+    <script src="/static/assets/vendor/aos/aos.js"></script>
+    <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  
+
+    <!-- Template Main JS File -->
+    <script src="/static/assets/js/main.js"></script>
+  
+  
+  
+  </body></html>
